@@ -1,41 +1,64 @@
 #!/usr/bin/env bash
+#
+# SPOTIFYYYYYYYY — version 6.6.6
+# Author: Wasted
+buildVer="6.6.6"
 
-buildVer="1.2.55.235.g5eaa0904"
+# -- small custom ASCII art header --
+echo
+echo "                   (               (     "
+echo " (  (       (      )\ )  *   )     )\ )  "
+echo " )\))(   '  )\    (()/(\` )  /( (  (()/(  "
+echo "((_)()\ )((((_)(   /(_)))( )(_)))\  /(_)) "
+echo "_(())\_)())\ _ )\ (_)) (_(_())((_)(_))_   "
+echo "\ \((_)/ /(_)_\(_)/ __||_   _|| __||   \\ "
+echo " \ \/\/ /  / _ \  \__ \  | |  | _| | |) |"
+echo "  \_/\_/  /_/ \_\ |___/  |_|  |___||___/ "
+echo
+echo "               SUPER SPOTIFY"
+echo
 
-command -v perl >/dev/null || { echo -e "\n${red}Error:${clr} perl command not found.\nInstall perl on your system then try again.\n" >&2; exit 1; }
+# ensure perl is installed
+command -v perl >/dev/null || {
+  echo -e "\nError: perl command not found.\nInstall perl on your system then try again.\n" >&2
+  exit 1
+}
 
+# detect platform
 case $(uname | tr '[:upper:]' '[:lower:]') in
   darwin*) platformType='macOS' ;;
         *) platformType='Linux' ;;
 esac
 
+# color palette
 clr='\033[0m'
 green='\033[0;32m'
 red='\033[0;31m'
 yellow='\033[0;33m'
 
+# updated help text to reference SUPER SPOTIFY
 show_help() {
   echo -e \
-"Options:
+"SUPER SPOTIFY Options:
 -B, --blockupdates     : block client auto-updates [macOS]
 -c, --clearcache       : clear client app cache
 -d, --devmode          : enable developer mode
 -e, --noexp            : exclude all experimental features
--f, --force            : force SpotX-Bash to run
+-f, --force            : force SUPER SPOTIFY to run
 -h, --hide             : hide non-music on home screen
 --help                 : print this help message
 -i, --interactive      : enable interactive mode
 --installdeb           : install latest client deb pkg on APT-based distros [Linux]
 --installmac           : install latest supported client version [macOS]
 -l, --lyricsbg         : set lyrics background color to black
---nocolor              : remove colors from SpotX-Bash output
+--nocolor              : remove colors from SUPER SPOTIFY output
 -o, --oldui            : use old home screen UI
 -p, --premium          : paid premium-tier subscriber
 -P <path>              : set path to client
 -S, --skipcodesign     : skip codesigning [macOS]
 --stable               : use with '--installdeb' for stable branch [Linux]
---uninstall            : uninstall SpotX-Bash
--v, --version          : print SpotX-Bash version
+--uninstall            : uninstall SUPER SPOTIFY
+-v, --version          : print SUPER SPOTIFY version
 -V <version>           : install specific client version [macOS]
 "
 }
@@ -109,12 +132,16 @@ ver_check() { (($(ver "${sxbVer}") > $(ver "1.1.0.0") && $(ver "${sxbVer}") < $(
 [[ "${verPrint}" ]] && { echo -e "SpotX-Bash version ${sxbVer}\n"; ver_check; exit 0; }
 
 echo
-echo "████╗███╗  ███╗ █████╗█╗  █╗  ███╗  ██╗ ████╗█╗ █╗"
-echo "█╔══╝█╔═█╗█╔══█╗╚═█╔═╝╚█╗█╔╝  █╔═█╗█╔═█╗█╔══╝█║ █║"
-echo "████╗███╔╝█║  █║  █║   ╚█╔╝██╗███╔╝████║████╗████║"
-echo "╚══█║█╔═╝ █║  █║  █║   █╔█╗╚═╝█╔═█╗█╔═█║╚══█║█╔═█║"
-echo "████║█║   ╚███╔╝  █║  █╔╝ █╗  ███╔╝█║ █║████║█║ █║"
-echo "╚═══╝╚╝    ╚══╝   ╚╝  ╚╝  ╚╝  ╚══╝ ╚╝ ╚╝╚═══╝╚╝ ╚╝"
+echo "                   (               (     "
+echo " (  (       (      )\ )  *   )     )\ )  "
+echo " )\))(   '  )\    (()/(\` )  /( (  (()/(  "
+echo "((_)()\ )((((_)(   /(_)))( )(_)))\  /(_)) "
+echo "_(())\_)())\ _ )\ (_)) (_(_())((_)(_))_   "
+echo "\ \((_)/ /(_)_\(_)/ __||_   _|| __||   \\ "
+echo " \ \/\/ /  / _ \  \__ \  | |  | _| | |) |"
+echo "  \_/\_/  /_/ \_\ |___/  |_|  |___||___/ "
+echo
+echo "               SUPER SPOTIFY"
 echo
 [[ "${logoVar}" ]] && exit 0
 
