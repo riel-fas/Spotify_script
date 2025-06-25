@@ -30,10 +30,6 @@
 
 **SUPER SPOTIFY** is a powerful bash script that modifies your Spotify desktop client to unlock premium features, remove advertisements, and enhance your music streaming experience. This script is based on SpotX-Bash technology and supports both macOS and Linux platforms.
 
-<div align="center">
-<img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" width="500">
-</div>
-
 ---
 
 ## ✨ Features
